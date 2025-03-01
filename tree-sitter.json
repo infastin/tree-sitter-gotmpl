@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "gotmpl",
+      "camelcase": "GoTmpl",
+      "scope": "source.gotmpl",
+      "file-types": [
+        ".tpl",
+        ".gotmpl"
+      ],
+      "injection-regex": "^gotmpl$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Gotmpl grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "infastin"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/infastin/tree-sitter-gotmpl"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
