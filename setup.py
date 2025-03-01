@@ -35,8 +35,8 @@ setup(
             name="_binding",
             sources=[
                 "bindings/python/tree_sitter_gotmpl/binding.c",
-                "src/parser.c",
-                # NOTE: if your language uses an external scanner, add it here.
+                "gotmpl/src/parser.c",
+                "helm/src/parser.c",
             ],
             extra_compile_args=[
                 "-std=c11",
@@ -50,7 +50,10 @@ setup(
                 ("PY_SSIZE_T_CLEAN", None),
                 ("TREE_SITTER_HIDE_SYMBOLS", None),
             ],
-            include_dirs=["src"],
+            include_dirs=[
+                "gotmpl/src",
+                "helm/src",
+            ],
             py_limited_api=True,
         )
     ],

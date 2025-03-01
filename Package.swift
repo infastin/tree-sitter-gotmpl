@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "TreeSitterGoTmpl",
     products: [
-        .library(name: "TreeSitterGoTmpl", targets: ["TreeSitterGoTmpl"]),
+        .library(name: "TreeSitterGoTmpl", targets: ["TreeSitterGoTmpl", "TreeSitterHelm"]),
     ],
     dependencies: [
         .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.8.0"),
@@ -15,20 +15,37 @@ let package = Package(
             dependencies: [],
             path: ".",
             sources: [
-                "src/parser.c",
-                // NOTE: if your language has an external scanner, add it here.
+                "gotmpl/src/parser.c",
             ],
             resources: [
                 .copy("queries")
             ],
-            publicHeadersPath: "bindings/swift",
-            cSettings: [.headerSearchPath("src")]
+            publicHeadersPath: "bindings/swift/gotmpl",
+            cSettings: [
+                .headerSearchPath("gotmpl/src"),
+            ]
+        ),
+        .target(
+            name: "TreeSitterHelm",
+            dependencies: [],
+            path: ".",
+            sources: [
+                "helm/src/parser.c",
+            ],
+            resources: [
+                .copy("queries")
+            ],
+            publicHeadersPath: "bindings/swift/helm",
+            cSettings: [
+                .headerSearchPath("helm/src"),
+            ]
         ),
         .testTarget(
             name: "TreeSitterGoTmplTests",
             dependencies: [
                 "SwiftTreeSitter",
                 "TreeSitterGoTmpl",
+                "TreeSitterHelm",
             ],
             path: "bindings/swift/TreeSitterGoTmplTests"
         )

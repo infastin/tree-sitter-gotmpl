@@ -1,6 +1,6 @@
 [package]
 name = "tree-sitter-gotmpl"
-description = "Gotmpl grammar for tree-sitter"
+description = "Go template grammar for tree-sitter"
 version = "0.1.0"
 authors = ["infastin"]
 license = "MIT"

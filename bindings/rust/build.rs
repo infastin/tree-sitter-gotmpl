@@ -1,22 +1,16 @@
 fn main() {
-    let src_dir = std::path::Path::new("src");
+    let root_dir = std::path::Path::new(".");
+    let gotmpl_dir = root_dir.join("gotmpl").join("src");
+    let helm_dir = root_dir.join("helm").join("src");
 
-    let mut c_config = cc::Build::new();
-    c_config.std("c11").include(src_dir);
+    let mut config = cc::Build::new();
+    config.include(&gotmpl_dir);
+    config.flag_if_supported("-std=c11").flag_if_supported("-Wno-unused-parameter");
 
-    #[cfg(target_env = "msvc")]
-    c_config.flag("-utf-8");
+    for path in &[gotmpl_dir.join("parser.c"), helm_dir.join("parser.c")] {
+        config.file(path);
+        println!("cargo:rerun-if-changed={}", path.to_str().unwrap());
+    }
 
-    let parser_path = src_dir.join("parser.c");
-    c_config.file(&parser_path);
-    println!("cargo:rerun-if-changed={}", parser_path.to_str().unwrap());
-
-    // NOTE: if your language uses an external scanner, uncomment this block:
-    /*
-    let scanner_path = src_dir.join("scanner.c");
-    c_config.file(&scanner_path);
-    println!("cargo:rerun-if-changed={}", scanner_path.to_str().unwrap());
-    */
-
-    c_config.compile("tree-sitter-gotmpl");
+    config.compile("tree-sitter-typescript");
 }

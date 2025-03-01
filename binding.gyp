@@ -6,12 +6,13 @@
         "<!(node -p \"require('node-addon-api').targets\"):node_addon_api_except",
       ],
       "include_dirs": [
-        "src",
+        "gotmpl/src",
+        "helm/src",
       ],
       "sources": [
+        "gotmpl/src/parser.c",
+        "helm/src/parser.c",
         "bindings/node/binding.cc",
-        "src/parser.c",
-        # NOTE: if your language has an external scanner, add it here.
       ],
       "conditions": [
         ["OS!='win'", {

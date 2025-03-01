@@ -1,13 +1,12 @@
 package tree_sitter_gotmpl
 
 // #cgo CFLAGS: -std=c11 -fPIC
-// #include "../../src/parser.c"
-// // NOTE: if your language has an external scanner, add it here.
+// #include "../../gotmpl/src/parser.c"
 import "C"
 
 import "unsafe"
 
 // Get the tree-sitter Language for this grammar.
-func Language() unsafe.Pointer {
+func LanguageGoTmpl() unsafe.Pointer {
 	return unsafe.Pointer(C.tree_sitter_gotmpl())
 }

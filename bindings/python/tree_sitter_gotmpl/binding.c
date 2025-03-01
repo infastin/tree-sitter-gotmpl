@@ -3,14 +3,21 @@
 typedef struct TSLanguage TSLanguage;
 
 TSLanguage *tree_sitter_gotmpl(void);
+TSLanguage *tree_sitter_helm(void);
 
-static PyObject* _binding_language(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
+static PyObject* _binding_language_gotmpl(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
     return PyCapsule_New(tree_sitter_gotmpl(), "tree_sitter.Language", NULL);
 }
 
+static PyObject* _binding_language_helm(PyObject *Py_UNUSED(self), PyObject *Py_UNUSED(args)) {
+    return PyCapsule_New(tree_sitter_helm(), "tree_sitter.Language", NULL);
+}
+
 static PyMethodDef methods[] = {
-    {"language", _binding_language, METH_NOARGS,
-     "Get the tree-sitter language for this grammar."},
+    {"language_gotmpl", _binding_language_gotmpl, METH_NOARGS,
+     "Get the tree-sitter language for Go template grammar."},
+    {"language_helm", _binding_language_helm, METH_NOARGS,
+     "Get the tree-sitter language for Helm grammar."},
     {NULL, NULL, 0, NULL}
 };
 

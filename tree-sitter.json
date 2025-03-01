@@ -8,13 +8,26 @@
         ".tpl",
         ".gotmpl"
       ],
-      "injection-regex": "^gotmpl$"
+      "injection-regex": "^gotmpl$",
+      "path": "gotmpl"
+    },
+    {
+      "name": "helm",
+      "camelcase": "Helm",
+      "scope": "source.helm",
+      "file-types": [
+        ".tpl",
+        ".gotmpl",
+        ".yaml"
+      ],
+      "injection-regex": "^helm$",
+      "path": "helm"
     }
   ],
   "metadata": {
     "version": "0.1.0",
     "license": "MIT",
-    "description": "Gotmpl grammar for tree-sitter",
+    "description": "Go template grammar for tree-sitter",
     "authors": [
       {
         "name": "infastin"

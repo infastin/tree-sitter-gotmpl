@@ -7,5 +7,6 @@ module.exports =
     : require("node-gyp-build")(root);
 
 try {
-  module.exports.nodeTypeInfo = require("../../src/node-types.json");
-} catch (_) {}
+  module.exports.gotmpl.nodeTypeInfo = require("../../gotmpl/src/node-types.json");
+  module.exports.helm.nodeTypeInfo = require("../../helm/src/node-types.json");
+} catch (_) { }
