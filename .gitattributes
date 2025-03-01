@@ -5,6 +5,6 @@ gotmpl/src/*.json linguist-generated
 gotmpl/src/parser.c linguist-generated
 gotmpl/src/tree_sitter/* linguist-vendored
 
-helm/src/*.json linguist-generated
-helm/src/parser.c linguist-generated
-helm/src/tree_sitter/* linguist-vendored
+goyamltmpl/src/*.json linguist-generated
+goyamltmpl/src/parser.c linguist-generated
+goyamltmpl/src/tree_sitter/* linguist-vendored

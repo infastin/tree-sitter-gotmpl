@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-gotmpl",
   "version": "0.1.0",
-  "description": "Go template grammar for tree-sitter",
+  "description": "Go Template grammar for tree-sitter",
   "repository": "https://github.com/infastin/tree-sitter-gotmpl",
   "license": "MIT",
   "author": {
@@ -14,6 +14,7 @@
     "parsing",
     "tree-sitter",
     "gotmpl",
+    "goyamltmpl",
     "helm"
   ],
   "files": [
@@ -21,7 +22,7 @@
     "bindings/node/*",
     "common/**",
     "gotmpl/src/**",
-    "helm/src/**",
+    "goyamltmpl/src/**",
     "prebuilds/**",
     "queries/*",
     "tree-sitter.json",

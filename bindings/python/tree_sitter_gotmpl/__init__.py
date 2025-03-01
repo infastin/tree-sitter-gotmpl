@@ -1,8 +1,8 @@
-"""Go template and Helm grammars for tree-sitter"""
+"""Go Template grammar for tree-sitter"""
 
 from importlib.resources import files as _files
 
-from ._binding import language_gotmpl, language_helm
+from ._binding import language_gotmpl, language_goyamltmpl
 
 
 def _get_query(name, file):
@@ -28,7 +28,7 @@ def __getattr__(name):
 
 __all__ = [
     "language_gotmpl",
-    "language_helm",
+    "language_goyamltmpl",
     # "HIGHLIGHTS_QUERY",
     # "INJECTIONS_QUERY",
     # "LOCALS_QUERY",

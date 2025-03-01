@@ -25,5 +25,5 @@ type Language = {
 };
 
 declare const gotmpl: Language;
-declare const helm: Language;
-export = {gotmpl, helm};
+declare const goyamltmpl: Language;
+export = {gotmpl, goyamltmpl};

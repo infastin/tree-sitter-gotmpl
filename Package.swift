@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "TreeSitterGoTmpl",
     products: [
-        .library(name: "TreeSitterGoTmpl", targets: ["TreeSitterGoTmpl", "TreeSitterHelm"]),
+        .library(name: "TreeSitterGoTmpl", targets: ["TreeSitterGoTmpl", "TreeSitterGoYAMLTmpl"]),
     ],
     dependencies: [
         .package(url: "https://github.com/ChimeHQ/SwiftTreeSitter", from: "0.8.0"),
@@ -26,18 +26,18 @@ let package = Package(
             ]
         ),
         .target(
-            name: "TreeSitterHelm",
+            name: "TreeSitterGoYAMLTmpl",
             dependencies: [],
             path: ".",
             sources: [
-                "helm/src/parser.c",
+                "goyamltmpl/src/parser.c",
             ],
             resources: [
                 .copy("queries")
             ],
-            publicHeadersPath: "bindings/swift/helm",
+            publicHeadersPath: "bindings/swift/goyamltmpl",
             cSettings: [
-                .headerSearchPath("helm/src"),
+                .headerSearchPath("goyamltmpl/src"),
             ]
         ),
         .testTarget(
@@ -45,7 +45,7 @@ let package = Package(
             dependencies: [
                 "SwiftTreeSitter",
                 "TreeSitterGoTmpl",
-                "TreeSitterHelm",
+                "TreeSitterGoYAMLTmpl",
             ],
             path: "bindings/swift/TreeSitterGoTmplTests"
         )

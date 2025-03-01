@@ -36,7 +36,7 @@ setup(
             sources=[
                 "bindings/python/tree_sitter_gotmpl/binding.c",
                 "gotmpl/src/parser.c",
-                "helm/src/parser.c",
+                "goyamltmpl/src/parser.c",
             ],
             extra_compile_args=[
                 "-std=c11",
@@ -52,7 +52,7 @@ setup(
             ],
             include_dirs=[
                 "gotmpl/src",
-                "helm/src",
+                "goyamltmpl/src",
             ],
             py_limited_api=True,
         )

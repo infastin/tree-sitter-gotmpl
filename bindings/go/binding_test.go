@@ -10,13 +10,13 @@ import (
 func TestCanLoadGoTmplGrammar(t *testing.T) {
 	language := tree_sitter.NewLanguage(tree_sitter_gotmpl.LanguageGoTmpl())
 	if language == nil {
-		t.Errorf("Error loading GoTmpl grammar")
+		t.Errorf("Error loading Go Template grammar")
 	}
 }
 
-func TestCanLoadHelmGrammar(t *testing.T) {
-	language := tree_sitter.NewLanguage(tree_sitter_gotmpl.LanguageHelm())
+func TestCanLoadGoYAMLTmplGrammar(t *testing.T) {
+	language := tree_sitter.NewLanguage(tree_sitter_gotmpl.LanguageGoYAMLTemplate())
 	if language == nil {
-		t.Errorf("Error loading GoTmpl grammar")
+		t.Errorf("Error loading Go YAML Template grammar")
 	}
 }

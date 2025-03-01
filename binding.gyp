@@ -7,11 +7,11 @@
       ],
       "include_dirs": [
         "gotmpl/src",
-        "helm/src",
+        "goyamltmpl/src",
       ],
       "sources": [
         "gotmpl/src/parser.c",
-        "helm/src/parser.c",
+        "goyamltmpl/src/parser.c",
         "bindings/node/binding.cc",
       ],
       "conditions": [

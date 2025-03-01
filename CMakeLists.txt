@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-gotmpl
         VERSION "0.1.0"
-        DESCRIPTION "Go template grammar for tree-sitter"
+        DESCRIPTION "Go Template grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/infastin/tree-sitter-gotmpl"
         LANGUAGES C)
 
@@ -54,5 +54,4 @@ macro(add_parser name)
 endmacro()
 
 add_subdirectory(gotmpl tree-sitter-gotmpl)
-
-add_subdirectory(helm tree-sitter-helm)
+add_subdirectory(goyamltmpl tree-sitter-goyamltmpl)

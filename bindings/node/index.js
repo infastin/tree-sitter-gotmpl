@@ -8,5 +8,5 @@ module.exports =
 
 try {
   module.exports.gotmpl.nodeTypeInfo = require("../../gotmpl/src/node-types.json");
-  module.exports.helm.nodeTypeInfo = require("../../helm/src/node-types.json");
+  module.exports.goyamltmpl.nodeTypeInfo = require("../../goyamltmpl/src/node-types.json");
 } catch (_) { }

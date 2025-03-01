@@ -12,22 +12,22 @@
       "path": "gotmpl"
     },
     {
-      "name": "helm",
-      "camelcase": "Helm",
-      "scope": "source.helm",
+      "name": "goyamltmpl",
+      "camelcase": "GoYAMLTmpl",
+      "scope": "source.goyamltmpl",
       "file-types": [
         ".tpl",
         ".gotmpl",
         ".yaml"
       ],
-      "injection-regex": "^helm$",
-      "path": "helm"
+      "injection-regex": "^goyamltmpl$",
+      "path": "goyamltmpl"
     }
   ],
   "metadata": {
     "version": "0.1.0",
     "license": "MIT",
-    "description": "Go template grammar for tree-sitter",
+    "description": "Go Template grammar for tree-sitter",
     "authors": [
       {
         "name": "infastin"

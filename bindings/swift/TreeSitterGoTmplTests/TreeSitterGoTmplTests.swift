@@ -7,13 +7,13 @@ final class TreeSitterGoTmplTests: XCTestCase {
         let parser = Parser()
         let language = Language(language: tree_sitter_gotmpl())
         XCTAssertNoThrow(try parser.setLanguage(language),
-                         "Error loading Go template grammar")
+                         "Error loading Go Template grammar")
     }
 
-    func testCanLoadHelmGrammar() throws {
+    func testCanLoadGoYAMLTmplGrammar() throws {
         let parser = Parser()
-        let language = Language(language: tree_sitter_helm())
+        let language = Language(language: tree_sitter_goyamltmpl())
         XCTAssertNoThrow(try parser.setLanguage(language),
-                         "Error loading Helm grammar")
+                         "Error loading Go YAML Template grammar")
     }
 }

@@ -10,7 +10,7 @@
 //! let language = tree_sitter_gotmpl::LANGUAGE_GOTMPL;
 //! parser
 //!     .set_language(&language.into())
-//!     .expect("Error loading Go template parser");
+//!     .expect("Error loading Go Template parser");
 //! let tree = parser.parse(code, None).unwrap();
 //! assert!(!tree.root_node().has_error());
 //! ```
@@ -22,28 +22,28 @@ use tree_sitter_language::LanguageFn;
 
 extern "C" {
     fn tree_sitter_gotmpl() -> *const ();
-    fn tree_sitter_helm() -> *const ();
+    fn tree_sitter_goyamltmpl() -> *const ();
 }
 
-/// The tree-sitter [`LanguageFn`][LanguageFn] for Go template grammar.
+/// The tree-sitter [`LanguageFn`][LanguageFn] for Go Template grammar.
 ///
 /// [LanguageFn]: https://docs.rs/tree-sitter-language/*/tree_sitter_language/struct.LanguageFn.html
 pub const LANGUAGE_GOTMPL: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_gotmpl) };
 
-/// The tree-sitter [`LanguageFn`][LanguageFn] for Helm grammar.
+/// The tree-sitter [`LanguageFn`][LanguageFn] for Go YAML Template grammar.
 ///
 /// [LanguageFn]: https://docs.rs/tree-sitter-language/*/tree_sitter_language/struct.LanguageFn.html
-pub const LANGUAGE_HELM: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_helm) };
+pub const LANGUAGE_GOYAMLTMPL: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_goyamltmpl) };
 
-/// The content of the [`node-types.json`][] file for Go template grammar.
+/// The content of the [`node-types.json`][] file for Go Template grammar.
 ///
 /// [`node-types.json`]: https://tree-sitter.github.io/tree-sitter/using-parsers#static-node-types
 pub const GOTMPL_NODE_TYPES: &str = include_str!("../../gotmpl/src/node-types.json");
 
-/// The content of the [`node-types.json`][] file for Helm grammar.
+/// The content of the [`node-types.json`][] file for Go YAML Template grammar.
 ///
 /// [`node-types.json`]: https://tree-sitter.github.io/tree-sitter/using-parsers#static-node-types
-pub const HELM_NODE_TYPES: &str = include_str!("../../helm/src/node-types.json");
+pub const GOYAMLTMPL_NODE_TYPES: &str = include_str!("../../goyamltmpl/src/node-types.json");
 
 // NOTE: uncomment these to include any queries that this grammar contains:
 
@@ -59,14 +59,14 @@ mod tests {
         let mut parser = tree_sitter::Parser::new();
         parser
             .set_language(&super::LANGUAGE_GOTMPL.into())
-            .expect("Error loading Go template parser");
+            .expect("Error loading Go Template parser");
     }
 
     #[test]
-    fn test_can_load_helm_grammar() {
+    fn test_can_load_goyamltmpl_grammar() {
         let mut parser = tree_sitter::Parser::new();
         parser
-            .set_language(&super::LANGUAGE_HELM.into())
-            .expect("Error loading Helm parser");
+            .set_language(&super::LANGUAGE_GOYAMLTMPL.into())
+            .expect("Error loading Go YAML Template parser");
     }
 }
